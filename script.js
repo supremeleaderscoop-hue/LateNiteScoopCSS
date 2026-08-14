@@ -467,4 +467,20 @@ socket.on("pm", function(data) {
             console.log("Browser blocked the audio autoplay:", error);
         });
     }
+
+    window.formatUserlistItem = function(a) {
+    var e = {
+        name: a.data("name") || "",
+        rank: a.data("rank"),
+        profile: a.data("profile") || { image: "", text: "" },
+        leader: a.data("leader") || !1,
+        icon: a.data("icon") || !1,
+        afk: a.data("afk") || !1
+    },
+    s = $(a.children()[1]);
+    s.removeClass(), s.css("font-style", ""), s.addClass(getNameColor(e.rank));
+    var t = e.name.replace(/[^\w-]/g, "\\$");
+    s.addClass("userlist-" + t);
+    if(e.afk) a.addClass("userlist_afk"); else a.removeClass("userlist_afk");
+};
 });
