@@ -467,12 +467,4 @@ socket.on("pm", function(data) {
             console.log("Browser blocked the audio autoplay:", error);
         });
     }
-    });
-
-// Force CyTube to repaint the user list once the external script loads
-setTimeout(function() {
-    $("#userlist .userlist_item").each(function() {
-        formatUserlistItem($(this));
-    });
-}, 250);
-
+    
