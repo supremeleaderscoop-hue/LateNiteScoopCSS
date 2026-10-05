@@ -665,8 +665,7 @@ body::-webkit-scrollbar {
    FIXED HALLOWEEN ADDITIONS (3 & 4) 🎃👻
    ========================================= */
 
-/* --- 3. FIXED: TERRIFIED USERNAMES --- 
-   Hover over any username in chat or the userlist to make them shiver */
+/* --- 3. FIXED: TERRIFIED USERNAMES --- */
 @keyframes tremble {
     0%, 100% { transform: translateX(0) rotate(0deg); }
     25% { transform: translateX(-1px) rotate(-1deg); }
@@ -681,8 +680,7 @@ body::-webkit-scrollbar {
     filter: drop-shadow(0 0 4px #FF6600) !important;
 }
 
-/* --- 4. FIXED: PHANTOM CHAT MESSAGES --- 
-   Replaces the old slide-in with a spooky green ectoplasm rise */
+/* --- 4. FIXED: PHANTOM CHAT MESSAGES --- */
 @keyframes phantomRise {
     0% { 
         opacity: 0; 
