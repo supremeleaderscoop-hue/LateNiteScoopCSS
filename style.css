@@ -660,3 +660,50 @@ body::-webkit-scrollbar {
     color: #000000 !important;
     text-shadow: none !important;
 }
+
+/* =========================================
+   CUSTOM PM WINDOWS (HALLOWEEN THEME)
+   ========================================= */
+#pmbar .panel {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 1px solid #FF6600 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.3) !important;
+}
+
+/* The PM Header (Name & Close Button) */
+#pmbar .panel-heading {
+    background: linear-gradient(to right, #000000, #FF6600) !important;
+    color: #FFFFFF !important;
+    font-family: 'Orbitron', sans-serif !important;
+    text-shadow: 0 0 5px #39FF14 !important;
+    border-bottom: 2px solid #39FF14 !important;
+    border-radius: 8px 8px 0 0 !important;
+    padding: 5px 10px !important;
+}
+
+/* The Close 'X' Button */
+#pmbar .close {
+    color: #39FF14 !important;
+    text-shadow: none !important;
+    opacity: 0.8 !important;
+}
+
+#pmbar .close:hover {
+    opacity: 1 !important;
+    color: #FFFFFF !important;
+}
+
+/* The Chat Background */
+#pmbar .panel-body, #pmbar .pm-buffer {
+    background: rgba(0, 0, 0, 0.85) !important;
+    color: #FFFFFF !important;
+}
+
+/* The Text Input Box */
+#pmbar input.form-control {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 1px solid #FF6600 !important;
+    color: #39FF14 !important;
+    font-family: 'Orbitron', sans-serif !important;
+}
