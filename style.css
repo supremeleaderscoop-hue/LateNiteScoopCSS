@@ -698,3 +698,61 @@ body::-webkit-scrollbar {
     animation: phantomRise 0.4s ease-out forwards !important;
     will-change: transform, opacity, filter;
 }
+
+/* =========================================
+   SPOOKY PRIVATE MESSAGE (PM) WINDOW OVERRIDES 🎃
+   ========================================= */
+
+/* The main PM popup container */
+.pm-box, .panel, .panel-default {
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 2px solid #FF6600 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.7) !important;
+    color: #EEEEEE !important;
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+/* PM Header (where the username is displayed) */
+.pm-box .panel-heading, .panel-heading {
+    background: linear-gradient(to right, #000000, #FF6600) !important;
+    color: #39FF14 !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid #39FF14 !important;
+    text-shadow: 0 0 5px #39FF14 !important;
+    border-radius: 6px 6px 0 0 !important;
+}
+
+/* Close button on PM box */
+.pm-box .close, .panel-heading .close {
+    color: #39FF14 !important;
+    text-shadow: 0 0 5px #39FF14 !important;
+    opacity: 0.8 !important;
+}
+.pm-box .close:hover {
+    color: #FFFFFF !important;
+}
+
+/* PM Message Buffer (where the chat history sits) */
+.pm-buffer {
+    background: rgba(0, 0, 0, 0.85) !important;
+    color: #EEEEEE !important;
+    font-family: 'Orbitron', sans-serif !important;
+    border: none !important;
+}
+
+/* PM Input Box */
+.pm-input, .pm-box input[type="text"] {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 1px solid #FF6600 !important;
+    color: #39FF14 !important;
+    font-family: 'Orbitron', sans-serif !important;
+    border-radius: 4px !important;
+}
+.pm-input:focus {
+    border-color: #39FF14 !important;
+    box-shadow: 0 0 8px #39FF14 !important;
+    outline: none !important;
+}
