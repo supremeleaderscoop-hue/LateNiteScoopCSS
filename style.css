@@ -50,7 +50,7 @@ a:hover { color: #ffffff; text-shadow: 0 0 8px #39FF14; }
 
 #messagebuffer {
     background: rgba(0, 0, 0, 0.85) !important;
-    -ms-overflow-style: none;  
+    -ms-overflow-style: none; 
     scrollbar-width: none;  
 }
 
