@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* =========================================
    1. GLOBAL & BACKGROUND 
    ========================================= */
@@ -50,7 +52,7 @@ a:hover { color: #ffffff; text-shadow: 0 0 8px #39FF14; }
 
 #messagebuffer {
     background: rgba(0, 0, 0, 0.85) !important;
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;  
     scrollbar-width: none;  
 }
 
@@ -123,7 +125,6 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
 /* =========================================
    6. CUSTOM USER STYLES
    ========================================= */
-
 .userlist-Clydesdale, .chat-msg-Clydesdale .username {
     background: url(https://i.pinimg.com/originals/5c/4d/ae/5c4daeb3483f830fd712e0bced0af6b5.gif) no-repeat center / cover !important;
     -webkit-text-fill-color: transparent !important;
@@ -177,7 +178,6 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
 
 .userlist-Warbotter,
 .chat-msg-Warbotter .username {
-    background: -moz-linear-gradient(left, rgba(30, 87, 153, 1) 0%, rgba(41, 137, 216, 1) 50%, rgba(30, 87, 153, 1) 100%, rgba(32, 124, 202, 1) 100%, rgba(125, 185, 232, 1) 100%);
     background: linear-gradient(to right, rgba(30, 87, 153, 1) 0%, rgba(41, 137, 216, 1) 50%, rgba(30, 87, 153, 1) 100%, rgba(32, 124, 202, 1) 100%, rgba(125, 185, 232, 1) 100%);
     color: transparent!important;
     -webkit-background-clip: text;
@@ -204,8 +204,7 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
 
 .userlist-CrankNLever,
 .chat-msg-CrankNLever .username {
-    background: -moz-linear-gradient(left, rgba(125, 185, 232, 1) 0%, rgba(212, 175, 55, 1) 0%, rgba(212, 175, 55, 1) 51%);
-    background: -webkit-linear-gradient(left, rgba(125, 185, 232, 1) 0%, rgba(212, 175, 55, 1) 0%, rgba(212, 175, 55, 1) 51%);
+    background: linear-gradient(to right, rgba(125, 185, 232, 1) 0%, rgba(212, 175, 55, 1) 0%, rgba(212, 175, 55, 1) 51%);
     color: transparent!important;
     -webkit-background-clip: text;
     background-clip: text;
@@ -213,7 +212,6 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
 
 .userlist-dreamingawake09,
 .chat-msg-dreamingawake09 .username {
-    background: -moz-linear-gradient(to right, gray, white, gray);
     background: linear-gradient(to right, gray, white, gray);
     color: transparent!important;
     -webkit-background-clip: text;
@@ -237,7 +235,7 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
     font-size: 150%;
     font-family: OCR A Std, monospace;
     font-variant: small-caps;
-    font-weight: 500%;
+    font-weight: 500;
     text-shadow: 0px -1px 12px, 0px 1px 12px;
 }
 
@@ -248,7 +246,9 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
     font-weight: 500;
 }
 
-/* Ticker Layout & Positioning */
+/* =========================================
+   7. TICKER & VIDEO GLOW LOOP
+   ========================================= */
 #room-ticker-wrap {
     display: flex;
     width: 100%;
@@ -260,7 +260,6 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
     border-radius: 4px;
 }
 
-/* Sharp "Live" Title Block */
 .ticker-title {
     background: #FF6600;
     color: #000;
@@ -273,7 +272,6 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
     box-shadow: 5px 0 10px rgba(0,0,0,0.3);
 }
 
-/* Infinite Scrolling Animation Box */
 .ticker-content {
     overflow: hidden;
     white-space: nowrap;
@@ -282,11 +280,13 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
     width: 100%;
     z-index: 1;
 }
+
 .ticker-text {
     display: inline-block;
     padding-left: 100%;
     animation: marquee-speed 25s linear infinite;
 }
+
 .ticker-text span {
     display: inline-block;
     padding-right: 50px;
@@ -301,13 +301,11 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
     100% { transform: translate3d(-100%, 0, 0); }
 }
 
-/* Focused, High-Visibility Edge Loop for #videowrap */
 #videowrap {
     position: relative;
     z-index: 1;
 }
 
-/* The continuous, uniform glowing frame */
 #videowrap::before {
     content: "";
     position: absolute;
@@ -316,44 +314,23 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
     right: -6px;
     bottom: -6px;
     z-index: -1;
-    
-    /* Orange and Black gradient loop */
     background: linear-gradient(90deg, #FF6600, #000000, #FF6600, #000000, #FF6600);
     background-size: 300% 100%;
-    
     filter: blur(12px);
     -webkit-filter: blur(12px);
     border-radius: 6px;
     pointer-events: none;
-    
-    /* Layered backlighting: Orange glow with a deep black secondary shadow */
-    box-shadow: 0 0 15px rgba(255, 102, 0, 0.7), 
-                0 0 30px rgba(0, 0, 0, 0.8);
-    
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.7), 0 0 30px rgba(0, 0, 0, 0.8);
     opacity: 1;
     animation: uniform-glow-loop 8s linear infinite;
 }
 
 @keyframes uniform-glow-loop {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 300% 0%;
-    }
+    0% { background-position: 0% 0%; }
+    100% { background-position: 300% 0%; }
 }
 
-body.fluid #videowrap::before {
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    filter: blur(18px);
-}
-
-#motdwrap {
-    display: none !important;
-}
+#motdwrap { display: none !important; }
 
 #messagebuffer img {
     max-width: 135px !important; 
@@ -368,13 +345,6 @@ body.fluid #videowrap::before {
 html, body {
     overflow-x: hidden !important;
     max-width: 100% !important;
-}
-
-#mainpage {
-    overflow-x: hidden !important;
-}
-
-html, body {
     scrollbar-width: none; 
     -ms-overflow-style: none; 
 }
@@ -386,91 +356,8 @@ body::-webkit-scrollbar {
     height: 0 !important;
 }
 
-#playlistrow {
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-    opacity: 1;
-    visibility: visible;
-}
-
-#playlistrow.playlist-collapsed {
-    display: none !important;
-    opacity: 0;
-    visibility: hidden;
-}
-
-#videowrap.ambient-hidden::before {
-    display: none !important;
-    background: none !important;
-    box-shadow: none !important;
-    animation: none !important;
-}
-
 /* =========================================
-   7. NEON SCRATCH PAD
-   ========================================= */
-#scoop-scratchpad-wrap {
-    position: fixed;
-    bottom: 80px; 
-    right: 20px;
-    width: 320px;
-    height: 280px;
-    background: rgba(0, 0, 0, 0.85) !important;
-    backdrop-filter: blur(8px) !important;
-    border: 2px solid #FF6600 !important;
-    border-radius: 8px !important;
-    box-shadow: 0 0 20px rgba(255, 102, 0, 0.8) !important;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-#scoop-scratchpad-wrap.hidden {
-    opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none;
-}
-
-#scratchpad-header {
-    background: linear-gradient(to right, #000000, #FF6600) !important;
-    color: #39FF14 !important;
-    padding: 8px !important;
-    font-weight: 900 !important;
-    text-align: center !important;
-    border-bottom: 2px solid #39FF14 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 6px 6px 0 0;
-}
-
-#scratchpad-text {
-    flex-grow: 1;
-    background: transparent !important;
-    color: #EEEEEE !important;
-    border: none !important;
-    padding: 12px !important;
-    font-family: 'Orbitron', sans-serif !important;
-    font-size: 1.1rem !important;
-    resize: none !important;
-    outline: none !important;
-    line-height: 1.5;
-}
-
-#scratchpad-text::placeholder {
-    color: rgba(57, 255, 20, 0.4) !important;
-    font-style: italic;
-}
-
-#scratchpad-text::-webkit-scrollbar {
-    width: 6px;
-}
-#scratchpad-text::-webkit-scrollbar-thumb {
-    background: #FF6600;
-    border-radius: 3px;
-}
-
-/* =========================================
-   8. DRAGGABLE SCRATCH PAD
+   8. SCRATCHPAD & MODALS
    ========================================= */
 #scoop-scratchpad-wrap {
     position: fixed;
@@ -489,9 +376,7 @@ body::-webkit-scrollbar {
     transition: opacity 0.2s ease;
 }
 
-#scoop-scratchpad-wrap.hidden {
-    display: none !important; 
-}
+#scoop-scratchpad-wrap.hidden { display: none !important; }
 
 #scratchpad-header {
     background: linear-gradient(to right, #000000, #FF6600) !important;
@@ -507,9 +392,18 @@ body::-webkit-scrollbar {
     user-select: none;
 }
 
-/* =========================================
-   9. EMOTE & PRIVATE CHAT GLASS OVERRIDES
-   ========================================= */
+#scratchpad-text {
+    flex-grow: 1;
+    background: transparent !important;
+    color: #EEEEEE !important;
+    border: none !important;
+    padding: 12px !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 1.1rem !important;
+    resize: none !important;
+    outline: none !important;
+    line-height: 1.5;
+}
 
 #emotelist, .modal-content {
     background: rgba(0, 0, 0, 0.9) !important;
@@ -529,132 +423,44 @@ body::-webkit-scrollbar {
     font-weight: 900 !important;
 }
 
-.modal-body input {
-    background: rgba(0, 0, 0, 0.5) !important;
-    border: 1px solid #FF6600 !important;
-    color: #39FF14 !important;
-}
-
-.emotelist-emote {
-    border: 1px solid rgba(255, 102, 0, 0.5);
-    border-radius: 4px;
-    padding: 2px;
-}
-.emotelist-emote:hover {
-    border-color: #39FF14;
-}
-
-#chatwrap {
-    height: calc(100vh - 180px) !important; 
-    display: block !important; 
-}
-
-#messagebuffer, #userlist {
-    height: calc(100% - 90px) !important; 
-    max-height: none !important;
-    overflow-y: auto !important; 
-}
-
-#chatwrap form {
-    position: static !important; 
-    clear: both !important; 
-    display: block !important;
-    margin: 0 !important;
-    padding-top: 5px !important;
-}
-
-#chatline {
-    display: block !important;
-    width: 100% !important;
-}
-
-#videowrap .embed-responsive {
-    padding-bottom: 0 !important; 
-    height: calc(100vh - 210px) !important; 
-}
-
-@keyframes slideInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-#messagebuffer > div {
-  animation: slideInLeft 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  will-change: transform, opacity;
-}
-
-#messagebuffer::-webkit-scrollbar {
-    display: none;
-}
-
 /* =========================================
-   10. SPOOKY GREEN GLOW NAVBAR 
+   9. NAVBAR BRAND
    ========================================= */
 .navbar-brand {
     font-family: 'Creepster', cursive !important;
     font-size: 28px !important;
     color: #39FF14 !important; 
     letter-spacing: 2px !important;
-    text-shadow: 
-        0 0 5px #39FF14, 
-        0 0 10px #39FF14, 
-        0 0 20px #FF6600, 
-        0 0 30px #FF6600 !important; 
+    text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #FF6600, 0 0 30px #FF6600 !important; 
     transition: all 0.3s ease !important;
 }
 
 .navbar-brand:hover {
     color: #FFFFFF !important;
-    text-shadow: 
-        0 0 5px #FFFFFF, 
-        0 0 10px #39FF14, 
-        0 0 20px #39FF14, 
-        0 0 30px #39FF14 !important;
+    text-shadow: 0 0 5px #FFFFFF, 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 30px #39FF14 !important;
 }
 
-/* Hide redundant Home button */
-.navbar-nav > li:first-child {
-    display: none !important;
-}
+.navbar-nav > li:first-child { display: none !important; }
 
-/* Top buttons (Account, Options, etc.) and Welcome text */
-.navbar-nav > li > a, 
-.navbar-text, 
-.navbar-text > a {
+.navbar-nav > li > a, .navbar-text, .navbar-text > a {
     font-family: 'Creepster', cursive !important;
     font-size: 20px !important;
     color: #39FF14 !important;
     letter-spacing: 1px !important;
-    text-shadow: 
-        0 0 5px #39FF14, 
-        0 0 10px #39FF14 !important;
+    text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14 !important;
     transition: all 0.3s ease !important;
 }
 
-.navbar-nav > li > a:hover, 
-.navbar-text > a:hover {
-    color: #FFFFFF !important;
-    text-shadow: 
-        0 0 5px #FFFFFF, 
-        0 0 10px #39FF14, 
-        0 0 20px #39FF14 !important;
-}
-
-/* Dropdown Menus - making sure they fit the theme if clicked */
 .dropdown-menu {
     background: rgba(0, 0, 0, 0.9) !important;
     border: 1px solid #FF6600 !important;
 }
+
 .dropdown-menu > li > a {
     color: #39FF14 !important;
     font-family: 'Orbitron', sans-serif !important; 
 }
+
 .dropdown-menu > li > a:hover {
     background: #FF6600 !important;
     color: #000000 !important;
@@ -662,10 +468,33 @@ body::-webkit-scrollbar {
 }
 
 /* =========================================
-   FIXED HALLOWEEN ADDITIONS (3 & 4) 🎃👻
+   10. SPOOKY HALLOWEEN ADDITIONS & CURSORS
    ========================================= */
 
-/* --- 3. FIXED: TERRIFIED USERNAMES --- */
+@keyframes poltergeist-flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 20px #FF6600, 0 0 30px #FF6600 !important;
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        text-shadow: none !important;
+        opacity: 0.6;
+    }
+}
+
+.navbar-brand {
+    animation: poltergeist-flicker 4s infinite alternate !important;
+}
+
+/* URL-encoded SVG Cursors for cross-browser safety */
+body, #main, #chatwrap, .ticker-content {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' style='font-size:24px'%3E%3Ctext y='20'%3E👻%3C/text%3E%3C/svg%3E"), auto !important;
+}
+
+a, .btn, .pointer, #userlist .userlist_item, .queue_entry {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' style='font-size:24px'%3E%3Ctext y='20'%3E🎃%3C/text%3E%3C/svg%3E"), pointer !important;
+}
+
 @keyframes tremble {
     0%, 100% { transform: translateX(0) rotate(0deg); }
     25% { transform: translateX(-1px) rotate(-1deg); }
@@ -680,7 +509,6 @@ body::-webkit-scrollbar {
     filter: drop-shadow(0 0 4px #FF6600) !important;
 }
 
-/* --- 4. FIXED: PHANTOM CHAT MESSAGES --- */
 @keyframes phantomRise {
     0% { 
         opacity: 0; 
@@ -700,10 +528,9 @@ body::-webkit-scrollbar {
 }
 
 /* =========================================
-   SPOOKY PRIVATE MESSAGE (PM) WINDOW OVERRIDES 🎃
+   11. PRIVATE MESSAGE (PM) WINDOW OVERRIDES 
    ========================================= */
 
-/* The main PM popup container */
 .pm-box, .panel, .panel-default {
     background: rgba(0, 0, 0, 0.9) !important;
     backdrop-filter: blur(8px) !important;
@@ -714,7 +541,6 @@ body::-webkit-scrollbar {
     font-family: 'Orbitron', sans-serif !important;
 }
 
-/* PM Header (where the username is displayed) */
 .pm-box .panel-heading, .panel-heading {
     background: linear-gradient(to right, #000000, #FF6600) !important;
     color: #39FF14 !important;
@@ -725,17 +551,16 @@ body::-webkit-scrollbar {
     border-radius: 6px 6px 0 0 !important;
 }
 
-/* Close button on PM box */
 .pm-box .close, .panel-heading .close {
     color: #39FF14 !important;
     text-shadow: 0 0 5px #39FF14 !important;
     opacity: 0.8 !important;
 }
+
 .pm-box .close:hover {
     color: #FFFFFF !important;
 }
 
-/* PM Message Buffer (where the chat history sits) */
 .pm-buffer {
     background: rgba(0, 0, 0, 0.85) !important;
     color: #EEEEEE !important;
@@ -743,7 +568,6 @@ body::-webkit-scrollbar {
     border: none !important;
 }
 
-/* PM Input Box */
 .pm-input, .pm-box input[type="text"] {
     background: rgba(0, 0, 0, 0.9) !important;
     border: 1px solid #FF6600 !important;
@@ -751,6 +575,7 @@ body::-webkit-scrollbar {
     font-family: 'Orbitron', sans-serif !important;
     border-radius: 4px !important;
 }
+
 .pm-input:focus {
     border-color: #39FF14 !important;
     box-shadow: 0 0 8px #39FF14 !important;
