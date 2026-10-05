@@ -35,7 +35,7 @@ a:hover { color: #ffffff; text-shadow: 0 0 8px #39FF14; }
 }
 
 #videocontainer { height: 450px !important; padding: 10px !important; }
-#chatwrap { height: 450px !important; border-radius: 12px !important; overflow: hidden !important; }
+#chatwrap { border-radius: 12px !important; }
 
 /* =========================================
    3. CHAT INTERFACE & USER LIST
