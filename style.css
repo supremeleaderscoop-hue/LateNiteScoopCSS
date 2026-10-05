@@ -660,3 +660,42 @@ body::-webkit-scrollbar {
     color: #000000 !important;
     text-shadow: none !important;
 }
+/* =========================================
+   FIXED HALLOWEEN ADDITIONS (3 & 4) 🎃👻
+   ========================================= */
+
+/* --- 3. FIXED: TERRIFIED USERNAMES --- 
+   Hover over any username in chat or the userlist to make them shiver */
+@keyframes tremble {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(-1px) rotate(-1deg); }
+    75% { transform: translateX(1px) rotate(1deg); }
+}
+
+.chat-msg .username:hover, 
+#userlist .userlist_item:hover, 
+.userlist_item span:hover {
+    display: inline-block !important;
+    animation: tremble 0.15s infinite !important;
+    filter: drop-shadow(0 0 4px #FF6600) !important;
+}
+
+/* --- 4. FIXED: PHANTOM CHAT MESSAGES --- 
+   Replaces the old slide-in with a spooky green ectoplasm rise */
+@keyframes phantomRise {
+    0% { 
+        opacity: 0; 
+        transform: translateY(15px) scale(0.98); 
+        filter: drop-shadow(0 0 10px #39FF14); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+        filter: drop-shadow(0 0 0px transparent); 
+    }
+}
+
+#messagebuffer > div {
+    animation: phantomRise 0.4s ease-out forwards !important;
+    will-change: transform, opacity, filter;
+}
