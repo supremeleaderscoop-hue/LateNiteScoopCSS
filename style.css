@@ -2,9 +2,10 @@
    1. GLOBAL & BACKGROUND 
    ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
 body {
-    background: linear-gradient(135deg, #0d001a, #000000, #4B0082, #000000) !important;
+    background: linear-gradient(135deg, #000000, #000000, #FF6600, #000000) !important;
     background-size: 400% 400% !important;
     animation: spaceDrift 20s ease infinite !important;
     color: #EEEEEE !important;
@@ -17,8 +18,8 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-a { color: #FFDF00; text-decoration: none; transition: all 0.3s ease; }
-a:hover { color: #ffffff; text-shadow: 0 0 8px #FFDF00; }
+a { color: #39FF14; text-decoration: none; transition: all 0.3s ease; }
+a:hover { color: #ffffff; text-shadow: 0 0 8px #39FF14; }
 
 /* =========================================
    2. NEON GLOWS & GLASSMORPHISM
@@ -26,34 +27,56 @@ a:hover { color: #ffffff; text-shadow: 0 0 8px #FFDF00; }
 #main, .well, #queue, #videocontainer {
     background: rgba(0, 0, 0, 0.6) !important;
     backdrop-filter: blur(5px) !important;
-    border: 1px solid rgba(75, 0, 130, 0.5) !important;
+    border: 1px solid rgba(255, 102, 0, 0.5) !important;
     border-radius: 10px !important;
-    box-shadow: 0 0 15px rgba(75, 0, 130, 0.3) !important;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3) !important;
 }
 
 #videocontainer { height: 450px !important; padding: 10px !important; }
 #chatwrap { height: 450px !important; border-radius: 12px !important; overflow: hidden !important; }
 
 /* =========================================
-   3. CHAT INTERFACE
+   3. CHAT INTERFACE & USER LIST
    ========================================= */
 #chatheader {
-    background: linear-gradient(to right, #000000, #4B0082) !important;
-    color: #FFFFF !important;
+    background: linear-gradient(to right, #000000, #FF6600) !important;
+    color: #FFFFFF !important;
     font-weight: 700 !important;
     font-size: 1.4rem !important;
-    text-shadow: 0 0 5px #FFDF00 !important;
-    border-bottom: 2px solid #FFDF00 !important;
+    text-shadow: 0 0 5px #39FF14 !important;
+    border-bottom: 2px solid #39FF14 !important;
     padding: 10px !important;
 }
 
-#messagebuffer {   background-color: rgba(0, 0, 0, 0.75) !important; }
-#userlist { height: 375px !important; width: 150px !important; background-color: rgba(0, 0, 0, 0.85) !important; }
+#messagebuffer {
+    background: rgba(0, 0, 0, 0.85) !important;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+#userlist { 
+    background: rgba(0, 0, 0, 0.9) !important; 
+    border-right: 1px solid rgba(255, 102, 0, 0.4) !important;
+}
+
+/* Slim Toxic Slime Scrollbar for Userlist */
+#userlist::-webkit-scrollbar {
+    display: block !important;
+    width: 6px !important;
+}
+#userlist::-webkit-scrollbar-track {
+    background: #000000 !important;
+}
+#userlist::-webkit-scrollbar-thumb {
+    background: #39FF14 !important;
+    border-radius: 3px !important;
+    box-shadow: 0 0 5px #39FF14 !important;
+}
 
 #chatline, #library_query {
     background: rgba(0, 0, 0, 0.9) !important;
-    border: 1px solid #4B0082 !important;
-    color: #FFDF00 !important;
+    border: 1px solid #FF6600 !important;
+    color: #39FF14 !important;
     font-family: 'Orbitron', sans-serif !important;
 }
 
@@ -61,29 +84,32 @@ a:hover { color: #ffffff; text-shadow: 0 0 8px #FFDF00; }
    4. STABLE BUTTONS & NAVBAR
    ========================================= */
 .btn, .btn-default, .btn-primary, .btn-success {
-    background: linear-gradient(to bottom, rgba(75, 0, 130, 0.8), #000000) !important;
-    border: 1px solid #4B0082 !important;
-    color: #FFFFFF !important;
-    font-family: 'Orbitron', sans-serif !important;
-    font-weight: 700 !important;
+    background: linear-gradient(to bottom, rgba(255, 102, 0, 0.8), #000000) !important;
+    border: 1px solid #FF6600 !important;
+    color: #39FF14 !important;
+    font-family: 'Creepster', cursive !important;
+    font-size: 18px !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0 0 5px #39FF14 !important;
 }
 
 .btn:hover {
-    background: linear-gradient(to bottom, #4B0082, rgba(0, 0, 0, 0.8)) !important;
+    background: linear-gradient(to bottom, #FF6600, rgba(0, 0, 0, 0.8)) !important;
     color: #ffffff !important;
-    border-color: #FFDF00 !important;
+    border-color: #39FF14 !important;
+    text-shadow: 0 0 10px #39FF14 !important;
 }
 
 .navbar, .navbar-inverse {
-    background: linear-gradient(to bottom, rgba(75, 0, 130, 0.8), #000000) !important;
-    border-bottom: 1px solid #4B0082 !important;
+    background: linear-gradient(to bottom, rgba(255, 102, 0, 0.8), #000000) !important;
+    border-bottom: 1px solid #FF6600 !important;
 }
 
 /* =========================================
    5. PLAYLIST & RAINBOW TEXT
    ========================================= */
 li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
-.queue_active { border-left: 4px solid #FFDF00 !important; }
+.queue_active { border-left: 4px solid #39FF14 !important; }
 
 .greentext {
     font-weight: 700 !important;
@@ -91,16 +117,143 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
 }
 
 @keyframes rainbow-glow {
-    0% { color: #ff1f1f; } 33% { color: #fdff00; } 66% { color: #00fff9; } 100% { color: #ff1f1f; }
+    0% { color: #FF6600; } 50% { color: #39FF14; } 100% { color: #FF6600; }
 }
 
+/* =========================================
+   6. CUSTOM USER STYLES
+   ========================================= */
+
+.userlist-Clydesdale, .chat-msg-Clydesdale .username {
+    background: url(https://i.pinimg.com/originals/5c/4d/ae/5c4daeb3483f830fd712e0bced0af6b5.gif) no-repeat center / cover !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    font-family: "Chalkduster", fantasy !important;
+    font-size: 140% !important;
+    font-weight: 500 !important;
+}
+
+.userlist-moon, .chat-msg-moon .username {
+    background: linear-gradient(to bottom, white, white, #dce3ef, white, white);
+    color: transparent !important;
+    -webkit-background-clip: text; background-clip: text;
+    font-size: 113%; font-weight: bold;
+    text-shadow: 0px -2px 11px white, 0px 2px 11px white;
+    font-family: "Chalkduster", fantasy; font-size: 130%; font-weight: 500;
+}
+
+.userlist-bobfreakingsaget,
+.chat-msg-bobfreakingsaget .username {
+    color: #FF0000!important;
+    font-size: 140%;
+    font-family: Georgia Extra Bold;
+    font-variant: small-caps;
+    font-weight: 500%;
+    text-shadow: 0 0 3px #00A825, 0 0 5px #00A825;
+}
+
+.userlist-Scoop, .chat-msg-Scoop .username {
+    background: url(https://c.tenor.com/yPlGK0T1rtsAAAAC/anime-purple.gif) no-repeat;
+    -webkit-text-fill-color: transparent; color: transparent !important;
+    -webkit-background-clip: text; background-clip: text;
+    font-family: "Chalkduster", fantasy; font-size: 140%; font-weight: 500;
+}
+
+.userlist-SleazyWatto, .chat-msg-SleazyWatto .username {
+    background: url(https://i.makeagif.com/media/12-21-2015/UPuNC9.gif) no-repeat;
+    -webkit-text-fill-color: transparent; color: transparent !important;
+    -webkit-background-clip: text; background-clip: text;
+    font-family: Papyrus, fantasy; font-size: 120%; font-weight: 700;
+}
+
+.userlist-SnoozySal, .chat-msg-SnoozySal .username {
+    background: url(https://img1.picmix.com/output/stamp/thumb/6/7/9/9/129976_f4db1.gif) no-repeat;
+    -webkit-text-fill-color: transparent; color: transparent !important;
+    -webkit-background-clip: text; background-clip: text;
+    font-family: "chalkduster", fantasy; font-size: 140%; font-weight: 500;
+}
+
+.userlist-Warbotter,
+.chat-msg-Warbotter .username {
+    background: -moz-linear-gradient(left, rgba(30, 87, 153, 1) 0%, rgba(41, 137, 216, 1) 50%, rgba(30, 87, 153, 1) 100%, rgba(32, 124, 202, 1) 100%, rgba(125, 185, 232, 1) 100%);
+    background: linear-gradient(to right, rgba(30, 87, 153, 1) 0%, rgba(41, 137, 216, 1) 50%, rgba(30, 87, 153, 1) 100%, rgba(32, 124, 202, 1) 100%, rgba(125, 185, 232, 1) 100%);
+    color: transparent!important;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: "Chalkduster", fantasy; font-size: 135%; font-weight: 500;
+}
+
+.userlist-XxAngelGuardianxX,
+.chat-msg-XxAngelGuardianxX .username {
+    background: url(https://i.gifer.com/9R8S.gif) repeat; 
+    -webkit-text-fill-color: transparent;
+    color: transparent!important;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: "chalkduster", fantasy; font-size: 140%; font-weight: 500;
+}
+
+.userlist-MrsScoop, .chat-msg-MrsScoop .username {
+    background: url(https://i.pinimg.com/originals/9d/fb/53/9dfb53247185388259c8035d5f0b02c0.gif) no-repeat;
+    -webkit-text-fill-color: transparent; color: transparent !important;
+    -webkit-background-clip: text; background-clip: text;
+    font-family: brush script mt, fantasy; font-size: 160%; font-weight: 500;
+}
+
+.userlist-CrankNLever,
+.chat-msg-CrankNLever .username {
+    background: -moz-linear-gradient(left, rgba(125, 185, 232, 1) 0%, rgba(212, 175, 55, 1) 0%, rgba(212, 175, 55, 1) 51%);
+    background: -webkit-linear-gradient(left, rgba(125, 185, 232, 1) 0%, rgba(212, 175, 55, 1) 0%, rgba(212, 175, 55, 1) 51%);
+    color: transparent!important;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.userlist-dreamingawake09,
+.chat-msg-dreamingawake09 .username {
+    background: -moz-linear-gradient(to right, gray, white, gray);
+    background: linear-gradient(to right, gray, white, gray);
+    color: transparent!important;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+.userlist-kat,
+.chat-msg-kat .username {
+    color: #33ff99 !important;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 100%;
+    font-style: italic;
+}
+
+.userlist-SnowBunnyWarrior,
+.chat-msg-SnowBunnyWarrior .username {
+    color: #a566bb!important;
+    font-size: 150%;
+    font-family: OCR A Std, monospace;
+    font-variant: small-caps;
+    font-weight: 500%;
+    text-shadow: 0px -1px 12px, 0px 1px 12px;
+}
+
+.userlist-Yuki, .chat-msg-Yuki .username {
+    color: #D66C09 !important;
+    font-family: "chalkduster", fantasy; 
+    font-size: 140%; 
+    font-weight: 500;
+}
 
 /* Ticker Layout & Positioning */
 #room-ticker-wrap {
     display: flex;
     width: 100%;
     background: #111;
-    border: 2px solid #ffdf00;
+    border: 2px solid #FF6600;
     margin-bottom: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -109,7 +262,7 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
 
 /* Sharp "Live" Title Block */
 .ticker-title {
-    background: #ffdf00;
+    background: #FF6600;
     color: #000;
     padding: 5px 15px;
     font-weight: 900;
@@ -158,33 +311,29 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
 #videowrap::before {
     content: "";
     position: absolute;
-    /* Hugs the player closely for sharp focus on all sides */
     top: -6px;
     left: -6px;
     right: -6px;
     bottom: -6px;
     z-index: -1;
     
-    /* Expanded color spectrum mapped out across a wide grid for a smooth loop */
-    background: linear-gradient(90deg, #4b0082, #9400d3, #ffdf00, #9400d3, #4b0082);
+    /* Orange and Black gradient loop */
+    background: linear-gradient(90deg, #FF6600, #000000, #FF6600, #000000, #FF6600);
     background-size: 300% 100%;
     
-    /* Tightened blur to keep the halo sharp and concentrated right at the border */
     filter: blur(12px);
     -webkit-filter: blur(12px);
     border-radius: 6px;
     pointer-events: none;
     
-    /* Layered backlighting to guarantee deep, permanent visibility on all 4 corners */
-    box-shadow: 0 0 15px rgba(148, 0, 211, 0.7), 
-                0 0 30px rgba(255, 223, 0, 0.5);
+    /* Layered backlighting: Orange glow with a deep black secondary shadow */
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.7), 
+                0 0 30px rgba(0, 0, 0, 0.8);
     
-    /* Constant brightness, infinite color-flow loop */
     opacity: 1;
     animation: uniform-glow-loop 8s linear infinite;
 }
 
-/* Seamless horizontal color tracking - zero fade or scale changes */
 @keyframes uniform-glow-loop {
     0% {
         background-position: 0% 0%;
@@ -194,7 +343,6 @@ li.queue_entry { font-size: 14pt !important; font-weight: 700 !important; }
     }
 }
 
-/* Tailored adjustments for fluid layout viewports */
 body.fluid #videowrap::before {
     top: -10px;
     left: -10px;
@@ -203,43 +351,34 @@ body.fluid #videowrap::before {
     filter: blur(18px);
 }
 
-/* Vaporize the MOTD container and reclaim the vertical space */
 #motdwrap {
     display: none !important;
 }
 
-/* Force all images in chat to behave */
 #messagebuffer img {
-    max-width: 135px !important;  /* Max width in pixels */
-    max-height: 135px !important; /* Max height in pixels */
-    object-fit: contain;          /* Preserves original aspect ratio without distortion */
-    border-radius: 4px;           /* Gives it a clean, modern frame */
+    max-width: 135px !important; 
+    max-height: 135px !important;
+    object-fit: contain;          
+    border-radius: 4px;           
     vertical-align: middle;
     display: inline-block;
     margin: 2px;
 }
 
-/* Eradicate horizontal scrolling completely */
 html, body {
     overflow-x: hidden !important;
     max-width: 100% !important;
 }
 
-/* Ensure the main container doesn't leak glowing pixels */
 #mainpage {
     overflow-x: hidden !important;
 }
 
-/* Hide the main vertical scrollbar for all browsers */
 html, body {
-    /* For Firefox */
     scrollbar-width: none; 
-    
-    /* For Internet Explorer and Legacy Edge */
     -ms-overflow-style: none; 
 }
 
-/* For Chrome, Safari, Opera, and New Edge */
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
     display: none !important;
@@ -247,21 +386,18 @@ body::-webkit-scrollbar {
     height: 0 !important;
 }
 
-/* Smoothly vanish the playlist when toggled */
 #playlistrow {
     transition: opacity 0.2s ease, visibility 0.2s ease;
     opacity: 1;
     visibility: visible;
 }
 
-/* The collapsed state rule */
 #playlistrow.playlist-collapsed {
     display: none !important;
     opacity: 0;
     visibility: hidden;
 }
 
-/* Instantly shut down the marquee background and shadows when toggled off */
 #videowrap.ambient-hidden::before {
     display: none !important;
     background: none !important;
@@ -274,42 +410,39 @@ body::-webkit-scrollbar {
    ========================================= */
 #scoop-scratchpad-wrap {
     position: fixed;
-    bottom: 80px; /* Floats just above the bottom right */
+    bottom: 80px; 
     right: 20px;
     width: 320px;
     height: 280px;
     background: rgba(0, 0, 0, 0.85) !important;
     backdrop-filter: blur(8px) !important;
-    border: 2px solid #4B0082 !important;
+    border: 2px solid #FF6600 !important;
     border-radius: 8px !important;
-    box-shadow: 0 0 20px rgba(75, 0, 130, 0.8) !important;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.8) !important;
     z-index: 9999;
     display: flex;
     flex-direction: column;
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* Hidden state for the toggle */
 #scoop-scratchpad-wrap.hidden {
     opacity: 0;
     transform: translateY(20px);
     pointer-events: none;
 }
 
-/* The header bar */
 #scratchpad-header {
-    background: linear-gradient(to right, #000000, #4B0082) !important;
-    color: #FFDF00 !important;
+    background: linear-gradient(to right, #000000, #FF6600) !important;
+    color: #39FF14 !important;
     padding: 8px !important;
     font-weight: 900 !important;
     text-align: center !important;
-    border-bottom: 2px solid #FFDF00 !important;
+    border-bottom: 2px solid #39FF14 !important;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 6px 6px 0 0;
 }
 
-/* The typing area */
 #scratchpad-text {
     flex-grow: 1;
     background: transparent !important;
@@ -323,18 +456,16 @@ body::-webkit-scrollbar {
     line-height: 1.5;
 }
 
-/* Custom placeholder color */
 #scratchpad-text::placeholder {
-    color: rgba(255, 223, 0, 0.4) !important;
+    color: rgba(57, 255, 20, 0.4) !important;
     font-style: italic;
 }
 
-/* Custom scrollbar just for the notepad */
 #scratchpad-text::-webkit-scrollbar {
     width: 6px;
 }
 #scratchpad-text::-webkit-scrollbar-thumb {
-    background: #4B0082;
+    background: #FF6600;
     border-radius: 3px;
 }
 
@@ -343,105 +474,95 @@ body::-webkit-scrollbar {
    ========================================= */
 #scoop-scratchpad-wrap {
     position: fixed;
-    top: 50%; /* Starts centered */
+    top: 50%; 
     left: 50%;
     width: 320px;
     height: 280px;
     background: rgba(0, 0, 0, 0.9) !important;
     backdrop-filter: blur(8px) !important;
-    border: 2px solid #4B0082 !important;
+    border: 2px solid #FF6600 !important;
     border-radius: 8px !important;
-    box-shadow: 0 0 20px rgba(75, 0, 130, 0.8) !important;
-    z-index: 10000; /* Stays above everything */
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.8) !important;
+    z-index: 10000; 
     display: flex;
     flex-direction: column;
     transition: opacity 0.2s ease;
 }
 
 #scoop-scratchpad-wrap.hidden {
-    display: none !important; /* Fully remove from flow when hidden */
+    display: none !important; 
 }
 
 #scratchpad-header {
-    background: linear-gradient(to right, #000000, #4B0082) !important;
-    color: #FFDF00 !important;
+    background: linear-gradient(to right, #000000, #FF6600) !important;
+    color: #39FF14 !important;
     padding: 8px !important;
     font-weight: 900 !important;
     text-align: center !important;
-    border-bottom: 2px solid #FFDF00 !important;
+    border-bottom: 2px solid #39FF14 !important;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 6px 6px 0 0;
-    cursor: move; /* Indicates it can be dragged */
+    cursor: move; 
     user-select: none;
 }
-/* ... keep #scratchpad-text and scrollbar CSS as is ... */
 
 /* =========================================
    9. EMOTE & PRIVATE CHAT GLASS OVERRIDES
    ========================================= */
 
-/* Target the Emote List window */
 #emotelist, .modal-content {
     background: rgba(0, 0, 0, 0.9) !important;
     backdrop-filter: blur(10px) !important;
-    border: 2px solid #4B0082 !important;
+    border: 2px solid #FF6600 !important;
     border-radius: 10px !important;
     color: #EEEEEE !important;
     font-family: 'Orbitron', sans-serif !important;
-    box-shadow: 0 0 20px rgba(75, 0, 130, 0.8) !important;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.8) !important;
 }
 
-/* Ensure headers match the Sheet header */
 .modal-header, #emotelist .modal-header {
-    background: linear-gradient(to right, #000000, #4B0082) !important;
-    border-bottom: 2px solid #FFDF00 !important;
-    color: #FFDF00 !important;
+    background: linear-gradient(to right, #000000, #FF6600) !important;
+    border-bottom: 2px solid #39FF14 !important;
+    color: #39FF14 !important;
     text-transform: uppercase;
     font-weight: 900 !important;
 }
 
-/* Make sure text input areas inside those modals look sharp */
 .modal-body input {
     background: rgba(0, 0, 0, 0.5) !important;
-    border: 1px solid #4B0082 !important;
-    color: #FFDF00 !important;
+    border: 1px solid #FF6600 !important;
+    color: #39FF14 !important;
 }
 
-/* Style the Emote images inside the list */
 .emotelist-emote {
-    border: 1px solid rgba(75, 0, 130, 0.5);
+    border: 1px solid rgba(255, 102, 0, 0.5);
     border-radius: 4px;
     padding: 2px;
 }
 .emotelist-emote:hover {
-    border-color: #FFDF00;
+    border-color: #39FF14;
 }
 
-/* 1. Stretch the main wrapper safely */
 #chatwrap {
-    /* Adjust this 180px up or down until the bottom hits your screen edge */
     height: calc(100vh - 180px) !important; 
     display: block !important; 
 }
 
-/* 2. Fill the wrapper, leaving exactly 45px for the input bar at the bottom */
 #messagebuffer, #userlist {
     height: calc(100% - 90px) !important; 
     max-height: none !important;
     overflow-y: auto !important; 
 }
 
-/* 3. The Magic Fix: Safely push the form below the floated chat boxes */
 #chatwrap form {
     position: static !important; 
-    clear: both !important; /* This is the critical line that snaps it below the chat */
+    clear: both !important; 
     display: block !important;
     margin: 0 !important;
     padding-top: 5px !important;
 }
 
-/* 4. Ensure the input box itself is visible and fills the space */
 #chatline {
     display: block !important;
     width: 100% !important;
@@ -449,10 +570,9 @@ body::-webkit-scrollbar {
 
 #videowrap .embed-responsive {
     padding-bottom: 0 !important; 
-    /* Increased from 180px to 210px to carve out exact space for the buttons */
     height: calc(100vh - 210px) !important; 
 }
-/* 1. Define the entrance animation */
+
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -464,18 +584,79 @@ body::-webkit-scrollbar {
   }
 }
 
-/* 2. Attach the animation to the chat messages */
 #messagebuffer > div {
   animation: slideInLeft 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   will-change: transform, opacity;
 }
-/* Hide scrollbar for Chrome, Safari and Opera */
+
 #messagebuffer::-webkit-scrollbar {
     display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-#messagebuffer {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+/* =========================================
+   10. SPOOKY GREEN GLOW NAVBAR 
+   ========================================= */
+.navbar-brand {
+    font-family: 'Creepster', cursive !important;
+    font-size: 28px !important;
+    color: #39FF14 !important; 
+    letter-spacing: 2px !important;
+    text-shadow: 
+        0 0 5px #39FF14, 
+        0 0 10px #39FF14, 
+        0 0 20px #FF6600, 
+        0 0 30px #FF6600 !important; 
+    transition: all 0.3s ease !important;
+}
+
+.navbar-brand:hover {
+    color: #FFFFFF !important;
+    text-shadow: 
+        0 0 5px #FFFFFF, 
+        0 0 10px #39FF14, 
+        0 0 20px #39FF14, 
+        0 0 30px #39FF14 !important;
+}
+
+/* Hide redundant Home button */
+.navbar-nav > li:first-child {
+    display: none !important;
+}
+
+/* Top buttons (Account, Options, etc.) and Welcome text */
+.navbar-nav > li > a, 
+.navbar-text, 
+.navbar-text > a {
+    font-family: 'Creepster', cursive !important;
+    font-size: 20px !important;
+    color: #39FF14 !important;
+    letter-spacing: 1px !important;
+    text-shadow: 
+        0 0 5px #39FF14, 
+        0 0 10px #39FF14 !important;
+    transition: all 0.3s ease !important;
+}
+
+.navbar-nav > li > a:hover, 
+.navbar-text > a:hover {
+    color: #FFFFFF !important;
+    text-shadow: 
+        0 0 5px #FFFFFF, 
+        0 0 10px #39FF14, 
+        0 0 20px #39FF14 !important;
+}
+
+/* Dropdown Menus - making sure they fit the theme if clicked */
+.dropdown-menu {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 1px solid #FF6600 !important;
+}
+.dropdown-menu > li > a {
+    color: #39FF14 !important;
+    font-family: 'Orbitron', sans-serif !important; 
+}
+.dropdown-menu > li > a:hover {
+    background: #FF6600 !important;
+    color: #000000 !important;
+    text-shadow: none !important;
 }
