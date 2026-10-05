@@ -34,15 +34,9 @@ a:hover { color: #ffffff; text-shadow: 0 0 8px #39FF14; }
     box-shadow: 0 0 15px rgba(255, 102, 0, 0.3) !important;
 }
 
-/* Remove static height so Fluid layout can scale it */
+/* Let CyTube's Fluid layout JavaScript handle all the heights natively! */
 #videocontainer { padding: 10px !important; }
-
-/* Convert to Flexbox to perfectly stack chat elements */
-#chatwrap { 
-    display: flex !important;
-    flex-direction: column !important;
-    border-radius: 12px !important; 
-}
+#chatwrap { border-radius: 12px !important; }
 
 /* =========================================
    3. CHAT INTERFACE & USER LIST
@@ -55,38 +49,31 @@ a:hover { color: #ffffff; text-shadow: 0 0 8px #39FF14; }
     text-shadow: 0 0 5px #39FF14 !important;
     border-bottom: 2px solid #39FF14 !important;
     padding: 10px !important;
-    flex-shrink: 0 !important;
-}
-
-#userlist { 
-    background: rgba(0, 0, 0, 0.9) !important; 
-    border-right: 1px solid rgba(255, 102, 0, 0.4) !important;
-    max-height: 150px !important; /* Prevents userlist from squishing the chat */
-    flex-shrink: 0 !important;
-}
-
-/* Slim Toxic Slime Scrollbar for Userlist */
-#userlist::-webkit-scrollbar { display: block !important; width: 6px !important; }
-#userlist::-webkit-scrollbar-track { background: #000000 !important; }
-#userlist::-webkit-scrollbar-thumb {
-    background: #39FF14 !important;
-    border-radius: 3px !important;
-    box-shadow: 0 0 5px #39FF14 !important;
 }
 
 #messagebuffer {
     background: rgba(0, 0, 0, 0.85) !important;
     -ms-overflow-style: none;  
     scrollbar-width: none;  
-    flex-grow: 1 !important; /* Stretches to fill empty space */
-    height: auto !important; /* Overrides CyTube's JS lock */
 }
 
-/* Forces the input box wrapper to stay at the bottom */
-#chatwrap > form {
-    flex-shrink: 0 !important;
-    padding: 2px 0 0 0 !important;
-    margin: 0 !important;
+#userlist { 
+    background: rgba(0, 0, 0, 0.9) !important; 
+    border-right: 1px solid rgba(255, 102, 0, 0.4) !important;
+}
+
+/* Slim Toxic Slime Scrollbar for Userlist */
+#userlist::-webkit-scrollbar {
+    display: block !important;
+    width: 6px !important;
+}
+#userlist::-webkit-scrollbar-track {
+    background: #000000 !important;
+}
+#userlist::-webkit-scrollbar-thumb {
+    background: #39FF14 !important;
+    border-radius: 3px !important;
+    box-shadow: 0 0 5px #39FF14 !important;
 }
 
 #chatline, #library_query {
@@ -94,7 +81,6 @@ a:hover { color: #ffffff; text-shadow: 0 0 8px #39FF14; }
     border: 1px solid #FF6600 !important;
     color: #39FF14 !important;
     font-family: 'Orbitron', sans-serif !important;
-    width: 100% !important;
 }
 
 /* =========================================
